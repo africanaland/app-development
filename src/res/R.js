@@ -1,11 +1,11 @@
 import COLORS from './colors';
 import PALETTE from './palette';
-import IMAGES from './images';
+// import IMAGES from './images';
 
 const R = {
   COLORS,
   PALETTE,
-  IMAGES,
+  // IMAGES,
 };
 
 export default R;
