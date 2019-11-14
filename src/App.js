@@ -74,10 +74,23 @@ const CustomDrawerContentComponent = props => {
       </View>  
     </SafeAreaView>
 )};
+const islogin = true;
 const navigator = createDrawerNavigator(
   {
-    Login,
-    Register,
+    Login:{
+      screen: Login,
+      navigationOptions: ({navigation}) => ({
+        drawerLockMode: 'locked-closed',
+        drawerLabel: () => null
+      })
+    },
+    Register:{
+      screen: Register,
+      navigationOptions: ({navigation}) => ({
+        drawerLockMode: 'locked-closed',
+        drawerLabel: () => null
+      })
+    },
     HomeScreen,    
     Booking,
     Messages,
@@ -89,7 +102,8 @@ const navigator = createDrawerNavigator(
     Settings,
   },{
     contentComponent: CustomDrawerContentComponent,
-    drawerWidth: "80%"
+    drawerWidth: "80%",
+    initialRouteName : (islogin?"HomeScreen":"Login")
   }
 )
 
