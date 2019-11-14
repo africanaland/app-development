@@ -82,6 +82,17 @@ const PALETTE = {
       marginBottom:15,
     }
   },
+
+  homepage: {
+    bottom : {
+      marginBottom: 20,
+      shadowColor:"#f00",
+      shadowOffset:{width:0, height:4},
+      shadowOpacity:0.4,
+      elevation: 4,
+    }
+  },
+
   text: {
     fontFamily: 'Sansation_Regular',
   },  
@@ -92,7 +103,10 @@ const PALETTE = {
   button: {
     color: COLORS.white
   },
-
+  icontext: {
+    fontFamily: 'Font Awesome 5 Free-Solid-900', 
+    fontWeight: "100",
+  }, 
   row: {
     flexDirection: 'row',
     width: "100%"
@@ -127,6 +141,81 @@ const PALETTE = {
     justifyContent: 'flex-end',
     marginBottom: 10,
   },
+  menubar: {
+    marginTop:20,
+  },
+  shadowbutton:{
+    shadowColor: 'rgba(0, 0, 0, 0.1)',
+    shadowOpacity: 0.8,
+    elevation: 6,
+    shadowRadius: 15 ,
+    shadowOffset : { width: 1, height: 13}
+  },
+  avatar:{
+    width:90, 
+    height:90,
+    borderRadius:100,
+    borderWidth:5, 
+    borderColor:COLORS.avatarbordercolor
+  },
+  navigatorbackground:{
+    width:width*0.8, 
+    height:width*0.8*(497/982)
+  },
+  navigatorprofile:{
+    position:"absolute", 
+    width:"100%",  
+    height:width*0.8*(497/982), 
+    paddingLeft:15, 
+    justifyContent:"center",
+  },
+  aligncentermiddle:{
+    height:"100%",
+    justifyContent:"center", 
+    alignItems:"center"
+  },
+  alignleftmiddle:{
+    height:"100%",
+    justifyContent:"center"
+  },
+  txtprofilename:{
+    fontSize:16,
+    color:COLORS.white,
+    marginBottom: 5
+  },
+  txtprofiletitle:{
+    fontSize:14,
+    color:COLORS.white,
+  },
+  txtprofilecontent:{
+    fontSize:14,
+    color:COLORS.white,
+    marginBottom:5
+  },
+  profile:{
+    marginLeft:20,
+  },
+  imageicon:{
+    width:20,
+    height:20,
+  },
+  navigatorbottom: {
+    height:100,
+    
+    alignItems:"center",   
+    borderTopWidth: 3,
+    borderTopColor: COLORS.hrgrey,
+  },
+  txtnavigatorbottom: {
+    flex:1,
+    textAlign:"center", 
+    width:"100%", 
+    alignItems:"center", 
+    justifyContent: "center",
+  },
+  navigatorscrollview: {
+    flex: 1
+  }
 };
 
 export default PALETTE;

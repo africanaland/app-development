@@ -8,6 +8,7 @@ const COLORS = {
   facebookcolor: '#3b5998',
   gmailcolor: '#dd4b39',
   signupcolor: '#605c5b',
+  avatarbordercolor: "#f2ccba",
 };
 
 export default COLORS;
