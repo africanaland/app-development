@@ -12,19 +12,23 @@
   "dependencies": {
     "lodash": "^4.17.15",
     "react": "16.9.0",
+    "react-base": "^0.2.0",
     "react-native": "0.61.4",
     "react-native-calendars": "^1.212.0",
     "react-native-collapsible": "^1.5.1",
     "react-native-gesture-handler": "^1.5.0",
     "react-native-iphone-x-helper": "^1.2.1",
     "react-native-linear-gradient": "^2.5.6",
+    "react-native-maps": "0.26.1",
     "react-native-modal": "^11.5.3",
     "react-native-reanimated": "^1.4.0",
+    "react-native-router-flux": "^4.0.6",
     "react-native-screens": "^2.0.0-alpha.8",
     "react-native-splash-screen": "^3.2.0",
     "react-native-swipe-list-view": "^2.0.4",
     "react-native-tab-view": "^2.10.0",
     "react-navigation": "^4.0.10",
+    "react-navigation-drawer": "^2.3.3",
     "react-navigation-stack": "^1.10.3",
     "react-navigation-tabs": "^2.5.6"
   },
@@ -46,5 +50,10 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "rnpm": {
+    "assets": [
+      "./src/res/fonts/"
+    ]
   }
 }

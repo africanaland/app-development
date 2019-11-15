@@ -9,7 +9,7 @@
 
 import React, {Component} from 'react';
 import SplashScreen from 'react-native-splash-screen';
-import {Text} from 'react-native';
+import MainApp from './src/App';
 export default class App extends Component {
     componentDidMount() 
     {
@@ -18,7 +18,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <Text>Login</Text>
+      <MainApp islogin={false}/>
     );
   }
 }

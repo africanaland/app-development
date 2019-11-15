@@ -1,64 +1,116 @@
 import { Dimensions, Platform } from 'react-native';
 import { ifIphoneX } from 'react-native-iphone-x-helper';
 import COLORS from './colors';
+import { redBright } from 'colorette';
+import leftPad from 'left-pad';
 
 const { width } = Dimensions.get('window');
+const { height } = Dimensions.get('window');
 
 const PALETTE = {
-  //
-  // General style
-  //
-  heading: {
-    color: COLORS.white,
-    fontSize: 20,
-    textAlign: 'center',
+  login: {
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#fff',
+      paddingLeft: 18,
+      paddingRight: 18,
+    }, 
+    LogoStyle:{
+      width: height/4,
+      height: height/4,
+      marginBottom: 20,
+    },
+    hr : {
+      height: 3,
+      backgroundColor: COLORS.hrgrey,
+      width:"40%",      
+      justifyContent: 'flex-end',
+    },
+    
+    forgotpasswordtext: {
+      fontSize:14,
+      marginTop:15,
+      marginBottom:15,
+    },
+  
+    ortext: {
+      fontWeight: "800",
+      fontSize:14,
+      marginTop:15,
+      marginBottom:15,
+    },
+
+    language:{
+      textAlign: "right",
+      width: "100%",
+    },
+    topcontent:{
+      width: "100%",
+      textAlign: "right",
+      marginTop:10,
+      marginBottom:10
+    },
+    maincontent:{
+      flex:8,
+      width: "100%",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    bottomcontent:{
+      flex:1,
+      width: "100%",
+      alignItems: "center"
+    }
   },
-  body: {
-    flex: 1,
-    ...ifIphoneX(
-      {
-        paddingTop: 50,
-      },
-      Platform.OS === 'ios' && {
-        paddingTop: 20,
-      },
-    ),
+
+  register: {
+    acceptterm:{
+
+    },
+    tc:{
+      color: COLORS.maincolor
+    },
+    termview:{
+      marginTop:6,
+    },
+    acceptview:{
+      textAlign: "left",
+      width: "100%",
+      marginTop:15,
+      marginBottom:15,
+    }
   },
-  f1: {
-    flex: 1,
+
+  homepage: {
+    bottom : {
+      marginBottom: 20,
+      shadowColor:"#f00",
+      shadowOffset:{width:0, height:4},
+      shadowOpacity:0.4,
+      elevation: 4,
+    }
   },
-  mainPadding: {
-    paddingHorizontal: width * 0.042,
-  },
+
   text: {
-    fontFamily: 'Rubik-Regular',
-    color: COLORS.greySlate,
+    fontFamily: 'Sansation_Regular',
+  },  
+  textbold: {
+    fontFamily: 'Sansation_Bold',
+  },  
+
+  button: {
+    color: COLORS.white
   },
-  lightRubik: {
-    fontFamily: 'Rubik-Light',
-  },
-  regularRubik: {
-    fontFamily: 'Rubik-Regular',
-  },
-  mediumRubik: {
-    fontFamily: 'Rubik-Medium',
-  },
-  boldRubik: {
-    fontFamily: 'Rubik-Bold',
-  },
-  textCenter: {
-    textAlign: 'center',
-  },
+  icontext: {
+    fontFamily: 'Font Awesome 5 Free-Solid-900', 
+    fontWeight: "100",
+  }, 
   row: {
     flexDirection: 'row',
+    width: "100%"
   },
-  center: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  //
-  // Primary direction
-  //
   primaryCenter: {
     justifyContent: 'center',
   },
@@ -68,287 +120,109 @@ const PALETTE = {
   primaryEnd: {
     justifyContent: 'flex-end',
   },
-  //
-  // Secondary direction
-  //
   secondaryCenter: {
     alignItems: 'center',
   },
   secondaryEnd: {
     alignItems: 'flex-end',
   },
-  //
-  // Wrapper padding: ex the padding of the card view wrapper
-  //
-  wrapperHorizontalPadding: {
-    paddingRight: 21,
-    paddingLeft: 24,
-  },
-  //
-  // Time text style of the card view
-  //
-  timeText: {
-    opacity: 0.5,
-  },
-  //
-  // Header container, left arrow and title styles of each screen
-  //
-  header: {
-    width: '100%',
-    height: 52.8,
-    paddingLeft: 26,
-    paddingRight: 24,
-    backgroundColor: COLORS.white,
-  },
-  headerTitleWrapper: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-  },
-  headerTitle: {
-    fontSize: 18,
-    letterSpacing: 0.4,
-  },
-  leftArrow: {
-    width: 24,
-    height: 25,
-    resizeMode: 'contain',
-  },
-  search: {
-    width: 21,
-    height: 20,
-    resizeMode: 'contain',
-  },
-  //
-  // Container for common modals
-  //
-  swipeModalContainer: {
-    backgroundColor: COLORS.white,
-    paddingHorizontal: 32,
-    paddingBottom: 52,
-    borderTopRightRadius: 32,
-    borderTopLeftRadius: 32,
-  },
-  popupModalContainer: {
-    width: '90%',
-    height: 276,
-    borderRadius: 16,
-    backgroundColor: COLORS.white,
-    alignSelf: 'center',
-  },
-  modalStyle: {
-    margin: 0,
-  },
-  knob: {
-    width: 68,
-    height: 3,
-    backgroundColor: COLORS.greySlate,
-    marginTop: 14,
-    marginBottom: 31,
-    alignSelf: 'center',
-  },
-  //
-  // Group item styles
-  //
-  groupItemTitle: {
-    fontSize: 16,
-    letterSpacing: 0.3,
-  },
-  groupItemWrapper: {
-    width: '100%',
-    height: 90,
-    paddingHorizontal: 32,
-    paddingTop: 18,
-    paddingBottom: 24,
-    backgroundColor: COLORS.greyPale,
-  },
-  groupItemShadow: {
-    backgroundColor: COLORS.white,
-    elevation: 4,
-    shadowColor: COLORS.black,
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.1,
-  },
-  groupItemDownIcon: {
-    width: 24,
-    height: 24,
-    resizeMode: 'contain',
-  },
-  groupActiveItemIntent: {
-    marginLeft: 7,
-  },
-  //
-  // TabView and Tabbar style
-  //
-  tabText: {
-    fontFamily: 'Helvetica',
-    fontSize: 18,
-    letterSpacing: 0.4,
-    fontWeight: '500',
-  },
-  inActiveTabText: {
-    color: COLORS.greySlate,
-    opacity: 0.3,
-  },
-  activeTabText: {
-    color: COLORS.redRouge,
-  },
-  tabBar: {
-    backgroundColor: COLORS.white,
-  },
-  //
-  // Button wrapper for Color and Gradient
-  //
-  buttonWrapper: {
-    paddingHorizontal: 13.6,
-    height: 50,
-    borderRadius: 25,
-    alignSelf: 'center',
-  },
-  buttonText: {
-    fontFamily: 'Helvetica',
-    fontSize: 16,
-    letterSpacing: 0.3,
-  },
-  //
-  // Swipe buttons for student item
-  //
-  rowBack: {
+  
+  f1: {
     flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
   },
-  backRightBtn: {
-    alignItems: 'center',
-    bottom: 0,
+  
+  center: {
     justifyContent: 'center',
-    position: 'absolute',
-    top: 0,
-    width: 44,
+    alignItems: 'center',
   },
 
-  //
-  // Style for request
-  //
-  requetCardWrapper: {
-    height: 334,
-    marginTop: 14,
-    borderRadius: 16,
-    backgroundColor: COLORS.white,
-    shadowColor: COLORS.greySlate,
-    shadowOpacity: 0.2,
-    shadowOffset: {
-      width: 0,
-      height: 10,
-    },
-    elevation: 10,
-    paddingTop: 14,
-    marginHorizontal: 6, // + the paddingHorizontal of the parent  = 16
-    marginBottom: 6,
+  bottom: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    marginBottom: 10,
   },
-  // Icon
-  requestThumbIcon: {
-    position: 'absolute',
-    top: 16,
-    right: 16,
-    width: 22,
-    height: 23,
-    resizeMode: 'contain',
+  menubar: {
+    marginTop:20,
   },
-  requestAvatarIcon: {
-    width: 32,
-    height: 32,
-    resizeMode: 'contain',
+  shadowbutton:{
+    shadowColor: 'rgba(0, 0, 0, 0.1)',
+    shadowOpacity: 0.8,
+    elevation: 6,
+    shadowRadius: 15 ,
+    shadowOffset : { width: 1, height: 13}
   },
-  requestBookIcon: {
-    width: 16,
-    height: 20,
-    resizeMode: 'contain',
+  avatar:{
+    width:90, 
+    height:90,
+    borderRadius:100,
+    borderWidth:5, 
+    borderColor:COLORS.avatarbordercolor
   },
-  requestCalendarIcon: {
-    width: 18,
-    height: 20,
-    resizeMode: 'contain',
+  navigatorbackground:{
+    width:width*0.8, 
+    height:width*0.8*(497/982)
   },
-  requestClockIcon: {
-    width: 18.3,
-    height: 18.3,
-    resizeMode: 'contain',
+  navigatorprofile:{
+    position:"absolute", 
+    width:"100%",  
+    height:width*0.8*(497/982), 
+    paddingLeft:15, 
+    justifyContent:"center",
   },
-  requestTimerIcon: {
-    width: 18,
-    height: 20,
-    resizeMode: 'contain',
+  aligncentermiddle:{
+    height:"100%",
+    justifyContent:"center", 
+    alignItems:"center"
   },
-  requestMapIcon: {
-    width: 18,
-    height: 20,
-    resizeMode: 'contain',
+  alignleftmiddle:{
+    height:"100%",
+    justifyContent:"center"
   },
-  // Row wrapper
-  requestRowWrapper: {
-    marginTop: 10,
+  txtprofilename:{
+    fontSize:16,
+    color:COLORS.white,
+    marginBottom: 5
   },
-  requestIconWrapper: {
-    width: 32,
+  txtprofiletitle:{
+    fontSize:14,
+    color:COLORS.white,
   },
-  // Text
-  requestFileText: {
-    width: 16,
-    height: 20,
-    resizeMode: 'contain',
+  txtprofilecontent:{
+    fontSize:14,
+    color:COLORS.white,
+    marginBottom:5
   },
-  requestNameText: {
-    fontSize: 15,
-    fontWeight: '500',
-    marginLeft: 9,
+  profile:{
+    marginLeft:20,
   },
-  requestNormalText: {
-    fontSize: 15,
-    marginLeft: 9,
+  imageicon:{
+    width:25,
+    height:25,
   },
-  requestClassText: {
-    marginLeft: 41,
-    fontSize: 15,
+  navigatorbottom: {
+    height:100,
+    
+    alignItems:"center",   
+    borderTopWidth: 3,
+    borderTopColor: COLORS.hrgrey,
   },
-  requestAlertText: {
-    fontSize: 12,
+  txtnavigatorbottom: {
+    flex:1,
+    
+    flexDirection: 'row',
+    textAlign:"center", 
+    width:"100%", 
+    alignItems:"center", 
+    justifyContent: "center",
   },
-  // Lesson Wrapper && Text
-  requestLessonWrapper: {
-    width: 50,
-    height: 24,
-    backgroundColor: COLORS.greyBlueCloudy,
-    borderRadius: 4,
-    marginLeft: 9,
+  navigatorscrollview: {
+    flex: 1
   },
-  requestLessonText: {
-    fontSize: 12,
-    letterSpacing: 0.3,
-  },
-  // Button Wrapper && Text
-  requestButtonWrapper: {
-    width: '100%',
-    height: 57,
-  },
-  requestButtonText: {
-    fontSize: 14,
-  },
-  // Gradient Style
-  requestGradientStyle: {
-    paddingHorizontal: 4,
-    paddingVertical: 3,
-    borderRadius: 4,
-  },
-  requestGradientText: {
-    fontSize: 12,
-    fontFamily: 'Helvetica',
-    color: COLORS.greySlate,
-  },
+  icon: {
+    width:25, 
+    height:undefined,
+    aspectRatio: 56 / 54,
+  }
 };
 
 export default PALETTE;
