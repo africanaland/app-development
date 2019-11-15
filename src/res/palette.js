@@ -196,8 +196,8 @@ const PALETTE = {
     marginLeft:20,
   },
   imageicon:{
-    width:20,
-    height:20,
+    width:25,
+    height:25,
   },
   navigatorbottom: {
     height:100,
@@ -208,6 +208,8 @@ const PALETTE = {
   },
   txtnavigatorbottom: {
     flex:1,
+    
+    flexDirection: 'row',
     textAlign:"center", 
     width:"100%", 
     alignItems:"center", 
@@ -215,6 +217,11 @@ const PALETTE = {
   },
   navigatorscrollview: {
     flex: 1
+  },
+  icon: {
+    width:25, 
+    height:undefined,
+    aspectRatio: 56 / 54,
   }
 };
 

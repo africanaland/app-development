@@ -64,11 +64,9 @@ const CustomDrawerContentComponent = props => {
           <DrawerItems {...props} />  
         </ScrollView> 
         <View style={[PALETTE.navigatorbottom]}>
-          <View style={[ PALETTE.txtnavigatorbottom]}>
-            <Text style={[PALETTE.textbold]}>
-              <Image style={[PALETTE.imageicon]} source = {require("./res/images/option/becomeahost.png")} />
-              &nbsp;&nbsp;Become a Host
-            </Text>
+          <View style={[ PALETTE.txtnavigatorbottom, PALETTE.row]}>            
+              <Image style={[PALETTE.imageicon]} source = {require("./res/images/icons/option/option_38.png")} />
+              <Text style={[PALETTE.textbold]}>&nbsp;&nbsp;Become a Host</Text>
           </View>
         </View>
       </View>  
@@ -91,15 +89,60 @@ const navigator = createDrawerNavigator(
         drawerLabel: () => null
       })
     },
-    HomeScreen,    
-    Booking,
-    Messages,
-    Notifications,
-    Wallet,
-    Favorites,
-    Offers,
-    GuestCare,
-    Settings,
+    HomeScreen:{      
+      screen: HomeScreen,
+      navigationOptions: ({navigation}) => ({
+        drawerIcon: ({focused}) =>(<Image style={[PALETTE.icon]} source = {require("./res/images/icons/option/option_05.png")}/>)
+      })
+    },    
+    Booking:{      
+      screen: Booking,
+      navigationOptions: ({navigation}) => ({
+        drawerIcon: ({focused}) =>(<Image style={[PALETTE.icon]} source = {require("./res/images/icons/option/option_05.png")}/>)
+      })
+    },
+    Messages:{      
+      screen: Messages,
+      navigationOptions: ({navigation}) => ({
+        drawerIcon: ({focused}) =>(<Image style={[PALETTE.icon]} source = {require("./res/images/icons/option/option_12.png")}/>)
+      })
+    },
+    Notifications:{      
+      screen: Notifications,
+      navigationOptions: ({navigation}) => ({
+        drawerIcon: ({focused}) =>(<Image style={[PALETTE.icon]} source = {require("./res/images/icons/option/option_16.png")}/>)
+      })
+    },
+    Wallet:{      
+      screen: Wallet,
+      navigationOptions: ({navigation}) => ({
+        drawerIcon: ({focused}) =>(<Image style={[PALETTE.icon]} source = {require("./res/images/icons/option/option_19.png")}/>)
+      })
+    },
+    Favorites:{      
+      screen: Favorites,
+      navigationOptions: ({navigation}) => ({
+        drawerIcon: ({focused}) =>(<Image style={[PALETTE.icon]} source = {require("./res/images/icons/option/option_23.png")}/>)
+      })
+    },
+    Offers:{      
+      screen: Offers,
+      navigationOptions: ({navigation}) => ({
+        drawerIcon: ({focused}) =>(<Image style={[PALETTE.icon]} source = {require("./res/images/icons/option/option_27.png")}/>)
+      })
+    },
+    GuestCare:{      
+      screen: GuestCare,
+      navigationOptions: ({navigation}) => ({
+        drawerIcon: ({focused}) =>(<Image style={[PALETTE.icon]} source = {require("./res/images/icons/option/option_31.png")}/>)
+      })
+    },
+    Settings:{      
+      screen: Settings,
+      navigationOptions: ({navigation}) => ({
+        drawerIcon: ({focused}) =>(<Image style={[PALETTE.icon]} source = {require("./res/images/icons/option/option_35.png")}/>)
+      })
+    },
   },{
     contentComponent: CustomDrawerContentComponent,
     drawerWidth: "80%",
