@@ -72,7 +72,7 @@ const CustomDrawerContentComponent = props => {
       </View>  
     </SafeAreaView>
 )};
-const islogin = true;
+const islogin = false;
 const navigator = createDrawerNavigator(
   {
     Login:{

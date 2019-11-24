@@ -90,7 +90,27 @@ const PALETTE = {
       shadowOffset:{width:0, height:4},
       shadowOpacity:0.4,
       elevation: 4,
-    }
+    },
+    shadow: {
+      shadowColor:"#f00",
+      shadowOffset:{width:0, height:4},
+      shadowOpacity:0.4,
+      elevation: 4,
+    },
+    searchmodal: {
+      backgroundColor: COLORS.white,
+      borderWidth: 1,
+      borderRadius: 2,
+    },
+    
+    hr : {
+      height: 1,
+      backgroundColor: COLORS.hrgrey,
+      width:"100%",      
+      justifyContent: 'flex-end',
+      marginTop:10,
+      marginBottom:10,
+    },
   },
 
   text: {
@@ -222,7 +242,7 @@ const PALETTE = {
     width:25, 
     height:undefined,
     aspectRatio: 56 / 54,
-  }
+  },
 };
 
 export default PALETTE;

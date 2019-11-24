@@ -1,19 +1,29 @@
 import React from 'react';
-import { View, Text, TextInput, StyleSheet } from 'react-native';
+import {TouchableOpacity, View, Text, TextInput, StyleSheet } from 'react-native';
 import R from 'res/R';
 
 // load resources: PALETTE, COLORS, IMAGES
 const { PALETTE, COLORS } = R;
 
-const IconInput = ({ text, icon, width, marginTop }) => {
+const IconInput = ({ text, icon, value, iconstyle, style, onPress, touchable=false, marginTop }) => {
   return (
-    <View style={styles.SectionStyle}>
-      <TextInput
-          style={[PALETTE.text, styles.TextInputStyle]}
-          placeholder={text}
-          underlineColorAndroid="transparent"
-      />
-      <Text style={styles.ImageStyle}>{icon}</Text>
+    <View style={[styles.SectionStyle, style]}>
+      {touchable?
+      (
+        <TextInput
+        style={[PALETTE.text, styles.TextInputStyle]}
+        placeholder={text}
+        underlineColorAndroid="transparent"
+        editable={false}
+        value={value}
+        />
+      ):(<TextInput
+      style={[PALETTE.text, styles.TextInputStyle]}
+      placeholder={text}
+      underlineColorAndroid="transparent"
+      value={value}
+      />)}
+      <Text style={[styles.ImageStyle, iconstyle]}>{icon}</Text>
     </View>
   );
 };
@@ -34,6 +44,7 @@ const styles = StyleSheet.create({
   TextInputStyle: {
     flex: 1,
     color: COLORS.textcolorgrey,
+    
   },
   ImageStyle: {
       fontFamily: 'Font Awesome 5 Free-Solid-900', 
