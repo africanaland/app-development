@@ -12,6 +12,7 @@ const COLORS = {
   gmailcolor: '#dd4b39',
   signupcolor: '#605c5b',
   avatarbordercolor: "#f2ccba",
+  redcolor: "#f14d4d",
 };
 
 export default COLORS;
